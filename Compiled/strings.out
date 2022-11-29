@@ -1,0 +1,26 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55a6ab39ce20 .scope module, "strings" "strings" 2 9;
+ .timescale 0 0;
+v0x55a6ab3aff70_0 .var "string", 0 168;
+    .scope S_0x55a6ab39ce20;
+T_0 ;
+    %pushi/vec4 2453717722, 0, 114;
+    %concati/vec4 2172944777, 0, 33;
+    %concati/vec4 3111214, 0, 22;
+    %store/vec4 v0x55a6ab3aff70_0, 0, 169;
+    %vpi_call 2 15 "$display", "%s \012", v0x55a6ab3aff70_0 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "strings.v";

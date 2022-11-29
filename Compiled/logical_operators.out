@@ -1,0 +1,32 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x560cc5eb4df0 .scope module, "logical_operators" "logical_operators" 2 1;
+ .timescale 0 0;
+    .scope S_0x560cc5eb4df0;
+T_0 ;
+    %vpi_call 2 5 "$display", "1'b1 && 1'b1 = %b", 1'b1 {0 0 0};
+    %vpi_call 2 6 "$display", "1'b1 && 1'b0 = %b", 1'b0 {0 0 0};
+    %vpi_call 2 7 "$display", "1'b0 && 1'bx = %b", 1'b0 {0 0 0};
+    %vpi_call 2 8 "$display", "1'b1 && 1'bx = %b", 1'bx {0 0 0};
+    %vpi_call 2 10 "$display", "1'b1 || 1'b0 = %b", 1'b1 {0 0 0};
+    %vpi_call 2 11 "$display", "1'b0 || 1'b0 = %b", 1'b0 {0 0 0};
+    %vpi_call 2 12 "$display", "1'b0 || 1'bx = %b", 1'bx {0 0 0};
+    %vpi_call 2 13 "$display", "1'b1 || 1'bx = %b", 1'b1 {0 0 0};
+    %vpi_call 2 15 "$display", "!1'b1 = %b", 1'b0 {0 0 0};
+    %vpi_call 2 16 "$display", "!1'b0 = %b", 1'b1 {0 0 0};
+    %delay 10, 0;
+    %vpi_call 2 18 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "logical_operators.v";

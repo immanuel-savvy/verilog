@@ -1,0 +1,25 @@
+#! /usr/bin/python3
+
+from sys import argv
+from os import system, listdir
+
+if len(argv) == 1:
+  raise "Error, no verilog file provided"
+
+if '--sweep' in argv:
+  system('rm -rf *.out')
+  exit(1)
+
+verilog_filename = argv[1]
+out_filename = verilog_filename[: verilog_filename.index('.v')] + '.out'
+
+system('iverilog -Wall %s -o %s'%(verilog_filename, out_filename))
+system('mv %s ./Compiled' % out_filename)
+system('vvp ./Compiled/%s' % out_filename)
+
+files = listdir('.')
+suppose_vcd = verilog_filename[:verilog_filename.index('.v')] + '.vcd'
+
+if suppose_vcd in files:
+  system('mv %s ./VCDs' % suppose_vcd)
+  system('gtkwave ./VCDs/%s' % suppose_vcd)

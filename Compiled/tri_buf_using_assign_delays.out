@@ -1,0 +1,45 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x56169af1bd90 .scope module, "tri_buf_using_assign_delays" "tri_buf_using_assign_delays" 2 1;
+ .timescale 0 0;
+o0x7fb67da34018 .functor BUFZ 1, C4<z>; HiZ drive
+; Elide local net with no drivers, v0x56169af1d830_0 name=_ivl_0
+v0x56169af1df30_0 .var "data_in", 0 0;
+v0x56169af641e0_0 .var "enable", 0 0;
+v0x56169af64280_0 .net "pad", 0 0, L_0x56169af64340;  1 drivers
+L_0x56169af64340 .delay 1 (2,2,2) L_0x56169af64340/d;
+L_0x56169af64340/d .functor MUXZ 1, o0x7fb67da34018, v0x56169af1df30_0, v0x56169af641e0_0, C4<>;
+    .scope S_0x56169af1bd90;
+T_0 ;
+    %vpi_call 2 9 "$monitor", "ENABLE = %b DATA: %b PAD %b", v0x56169af641e0_0, v0x56169af1df30_0, v0x56169af64280_0 {0 0 0};
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x56169af641e0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x56169af1df30_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x56169af641e0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x56169af1df30_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x56169af641e0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 15 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "tri_buf_using_assign_delays.v";

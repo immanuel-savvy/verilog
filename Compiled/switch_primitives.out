@@ -1,0 +1,38 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55e82b0c7df0 .scope module, "switch_primitive" "switch_primitive" 2 1;
+ .timescale 0 0;
+o0x7f8bc8c53018 .functor BUFZ 1, C4<z>; HiZ drive
+I0x55e82b0c84e0 .island tran;
+p0x7f8bc8c53018 .port I0x55e82b0c84e0, o0x7f8bc8c53018;
+v0x55e82b0daf70_0 .net8 "net1", 0 0, p0x7f8bc8c53018;  0 drivers, strength-aware
+o0x7f8bc8c53048 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7f8bc8c53048 .port I0x55e82b0c84e0, o0x7f8bc8c53048;
+v0x55e82b0c9830_0 .net8 "net2", 0 0, p0x7f8bc8c53048;  0 drivers, strength-aware
+o0x7f8bc8c53078 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7f8bc8c53078 .import I0x55e82b0c84e0, o0x7f8bc8c53078;
+v0x55e82b0ca190_0 .net "net3", 0 0, o0x7f8bc8c53078;  0 drivers
+o0x7f8bc8c530a8 .functor BUFZ 1, C4<z>; HiZ drive
+I0x55e82b0c8640 .island tran;
+p0x7f8bc8c530a8 .port I0x55e82b0c8640, o0x7f8bc8c530a8;
+v0x55e82b0c9f30_0 .net8 "net4", 0 0, p0x7f8bc8c530a8;  0 drivers, strength-aware
+o0x7f8bc8c530d8 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7f8bc8c530d8 .port I0x55e82b0c8640, o0x7f8bc8c530d8;
+v0x55e82b10dcd0_0 .net8 "net5", 0 0, p0x7f8bc8c530d8;  0 drivers, strength-aware
+o0x7f8bc8c53108 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7f8bc8c53108 .import I0x55e82b0c8640, o0x7f8bc8c53108;
+v0x55e82b10dde0_0 .net "net6", 0 0, o0x7f8bc8c53108;  0 drivers
+ .tranif0 I0x55e82b0c84e0, p0x7f8bc8c53018 p0x7f8bc8c53048, p0x7f8bc8c53078;
+ .rtranif1 I0x55e82b0c8640, p0x7f8bc8c530a8 p0x7f8bc8c530d8, p0x7f8bc8c53108;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "switch_primitives.v";

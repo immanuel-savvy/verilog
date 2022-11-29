@@ -1,0 +1,35 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x561a26e50d90 .scope module, "buf_gate" "buf_gate" 2 1;
+ .timescale 0 0;
+L_0x561a26e984d0/d .functor BUF 1, v0x561a26e52830_0, C4<0>, C4<0>, C4<0>;
+L_0x561a26e984d0 .delay 1 (5,5,5) L_0x561a26e984d0/d;
+v0x561a26e52830_0 .var "in", 0 0;
+v0x561a26e53190_0 .net "out", 0 0, L_0x561a26e984d0;  1 drivers
+    .scope S_0x561a26e50d90;
+T_0 ;
+    %vpi_call 2 9 "$monitor", "Time = %g in = %b out = %b", $time, v0x561a26e52830_0, v0x561a26e53190_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x561a26e52830_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x561a26e52830_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x561a26e52830_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 13 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "buf_gate.v";
